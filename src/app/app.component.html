@@ -5,15 +5,18 @@
         <mat-icon class="icon">input</mat-icon>
         <span class="label">Login</span>
       </a>
-      <a mat-list-item>
+      <a mat-list-item
+         routerLink="/">
         <mat-icon class="icon">home</mat-icon>
         <span class="label">Home</span>
       </a>
-      <a mat-list-item>
+      <a mat-list-item
+         routerLink="/dashboard">
         <mat-icon class="icon">dashboard</mat-icon>
         <span class="label">Dashboard</span>
       </a>
-      <a  mat-list-item type="button">
+      <a  mat-list-item
+          type="button">
         <mat-icon class="icon">input</mat-icon>
         <span class="label">LogOut</span>
       </a>
@@ -22,12 +25,12 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <div fxHide.gt-xs>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
       <div>
-        <a>
+        <a routerLink="/">
           Material Blog
         </a>
       </div>
@@ -40,13 +43,15 @@
             </a>
           </li>
           <li>
-            <a >
+            <a
+              routerLink="/">
               <mat-icon class="icon">home</mat-icon>
               <span class="label">Home</span>
             </a>
           </li>
           <li>
-            <a>
+            <a
+              routerLink="/dashboard">
               <mat-icon class="icon">dashboard</mat-icon>
               <span class="label">Dashboard</span>
             </a>
@@ -61,6 +66,7 @@
       </div>
     </mat-toolbar>
     <main>
+      <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
