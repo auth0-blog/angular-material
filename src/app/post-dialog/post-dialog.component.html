@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>{{data}}</h1>
+<div mat-dialog-content>
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Post Title" type="text" required [(ngModel)]="blogPost.title" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Post Body" required [(ngModel)]="blogPost.body" name="body"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select matInput placeholder="Post Category" required [(ngModel)]="blogPost.category" name="category">
+        <mat-option *ngFor="let cat of categories" [value]="cat.value">
+          {{ cat.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Save</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+</div>
